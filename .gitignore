@@ -1,0 +1,6 @@
+node_modules
+documentacao
+build
+src/Config
+src/Repositories/Parse
+src/Controllers/GenericController.ts
