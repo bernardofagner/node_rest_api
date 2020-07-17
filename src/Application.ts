@@ -32,7 +32,7 @@ class Application {
 
     //#region Inicializacao
     public iniciarAplicacao() {
-        let porta = process.env.PORT || 3000;
+        let porta = process.env.PORT || 8080;
         this.app.listen(porta, () => {
             console.log("Servidor iniciado em: http://localhost:" + porta);
         });
