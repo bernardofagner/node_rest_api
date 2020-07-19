@@ -1,4 +1,3 @@
-
 export class BaseException {
     
     public Message: string;
