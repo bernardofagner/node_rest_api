@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import status from "http-status-codes";
 import { ListUsersCommand } from "../Commands/Users/ListUsersCommand";
 import { UserRepository } from "../Repositories/Sql/UserRepository";
-import { UserEntity } from "../Entities/User/User.entity";
 import { ListUsersRequest } from "../Suport/RequestResponse/IListUsersRequest";
 
 export class UsersController {
