@@ -22,7 +22,7 @@ export class ApplicationRouter {
 
     //#region Set routes
     private setSystemControllerRoutes(): void {
-        this.systemControllerRouter.get('/api/v1/default', this.indexController.index);
+        this.systemControllerRouter.get('/', this.indexController.index);
     }
 
     private setUsersControllerRoutes(): void {
