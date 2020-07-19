@@ -3,13 +3,13 @@ import status from "http-status-codes";
 import { ListUsersCommand } from "../Commands/Users/ListUsersCommand";
 import { UserRepository } from "../Repositories/Sql/UserRepository";
 import { UserEntity } from "../Entities/User/User.entity";
-import { ListUsersRequest } from "../Suport/RequestResponse/ListUsersRequest";
+import { ListUsersRequest } from "../Suport/RequestResponse/IListUsersRequest";
 
 export class UsersController {
 
     constructor() { }
 
-    public async getAllusers(request: Request, response:Response): Promise<any> {
+    public async getAllusers(request: Request, response: Response): Promise<any> {
 
         const executor = new ListUsersCommand(new UserRepository());
         const req: ListUsersRequest = {

@@ -1,5 +1,5 @@
 import { UserEntity } from "../../Entities/User/User.entity";
 
-export class ListUsersResponse {
+export interface IListUsersResponse {
     Users: UserEntity[] | undefined;
 }

@@ -1,8 +1,7 @@
-import { Request } from "express";
 import { UserRepository } from "../../Repositories/Sql/UserRepository";
 import { UserEntity } from "../../Entities/User/User.entity";
-import { ListUsersResponse } from "../../Suport/RequestResponse/ListUsersResponse";
-import { ListUsersRequest } from "../../Suport/RequestResponse/ListUsersRequest";
+import { IListUsersResponse } from "../../Suport/RequestResponse/IListUsersResponse";
+import { ListUsersRequest } from "../../Suport/RequestResponse/IListUsersRequest";
 
 export class ListUsersCommand {
 
@@ -17,7 +16,7 @@ export class ListUsersCommand {
         await this.usersRepository.HeathCkech();
         const allUsers: UserEntity[] = await this.usersRepository.getAll();
 
-        const result: ListUsersResponse = {
+        const result: IListUsersResponse = {
             Users: allUsers
         };
 

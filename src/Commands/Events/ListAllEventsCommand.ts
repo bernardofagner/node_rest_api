@@ -1,10 +1,6 @@
-import { IListAllEventsCommand } from "../../Suport/Interfaces/Commands/IListAllEventsCommand";
-import { GenericRepository } from "../../Repositories/Parse/GenericRepository";
-import { ListAllEventsResponse } from "../../Suport/RequestResponse/ListAllEventsResponse";
-import { ListAllEventsRequest } from "../../Suport/RequestResponse/ListAllEventsRequest";
-import { ResultState } from "../../Infrasctructure/ResultState";
+import { GenericRepository } from "../../Repositories/Parse/ParseRepository";
 
-export class ListAllEventsCommand implements IListAllEventsCommand {
+export class ListAllEventsCommand {
 
     private eventsRepository: GenericRepository;
 
@@ -12,11 +8,9 @@ export class ListAllEventsCommand implements IListAllEventsCommand {
         this.eventsRepository = eventsRepository;
     }
     
-    public async ExecuteAsync(request: ListAllEventsRequest): Promise<ListAllEventsResponse> {
+    public async ExecuteAsync(): Promise<any> {
 
-        let parseResult = new ListAllEventsResponse();
-        parseResult.eventos = await this.eventsRepository.listAllMockedInformations();
-        parseResult.commandState = ResultState.Success;
-        return parseResult;
+        let result = await this.eventsRepository.listAllEvents();
+        return result;
     }
 }
